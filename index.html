@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<script Src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link href="css/NewFile.css" rel="stylesheet" type="text/css">
+		<script src="js/Newfile.js"></script>
+		<title>Guitar</title>
+	</head>
+	<body class="news">
+		<div>
+			<div class="nav">
+				<ul>
+					<li class="Guitars"><a href="#">Guitars</a>
+						<ul>
+							<li><a href="#">Electric Guitars</a></li>
+							<li><a href="#">Acoustic Guitars</a></li>
+							<li><a href="#">Acoustic-Electric Guitars</a></li>
+							<li><a href="#">Classical Guitars</a></li>
+						</ul>
+					</li>  
+					<li class="Bass"><a href="#">Bass</a></li>
+					<li class="Drums"><a href="#">Drums</a></li>
+					<li class="Keyboards"><a href="#">Keyboards</a></li>
+					<li class="Lighting"><a href="#">Dj & Lighting</a></li>
+					<li class="Used"><a href="#">Used Gear</a></li>
+					<li class="Clearance"><a href="#">Clearance</a></li>
+				</ul>
+			</div>
+			<div class="sw.screen" id="page1">
+				<div class="main">
+						<img class="img1" src="images/main.jpg" alt="image">
+				</div>
+				<div>
+					<img class="img" src="" alt="image" id="currentImage">
+				</div>
+				<div>
+					<input type="button" id="prev" value="Prev" class="prev">
+					<input type="button" id="next" value="Next" class="next">
+				</div>
+				<div>
+					<button class="accordion"><b>Product Info</b></button>
+					<div class="panel">
+					  <p id="prodinfo"></p>
+					  Product Price: <span id="prodcost"></span></br></br>
+					</div>
+					<button class="accordion"><b>Shipping Info</b></button>
+					<div class="panel">
+					  <p id="shipinfo"></p>
+					</div>
+					<button class="accordion"><b>Customer Reviews</b></button>
+					<div class="panel">
+					  <p id="review"></p>
+					</div>
+				</div>
+				<div class="buy">
+					<button id="buy" onclick="loadScreen(2)">Buy</button>
+				</div>
+			</div>
+				<!-- new section -->		
+			<div class="hide" id="pag2">
+				<div class="imagenav">
+					<div class="page2img">
+						<img id="siva" src="">
+					</div>
+					<div class="page2img1">
+						<p><b>Product Price:</b> <span id="siva4"></span></p>
+						<p><b>Product Info:</b> <span id="siva1"></span></p>
+						<p><b>Shipping details:</b> <span id="siva2"></span></p>
+						<p><b>Total Price:</b> <span id="siva3"></span></p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="form" id="purchaseContainer">
+					<h2>Purchase Form</h2>
+					<form id="purchaseForm" name="myForm">
+						<label for="firstName">First Name : </label>
+						<input name="firstName" type="text" id="firstName" maxlength="15"><br/><br/>
+						<label for="lastName">Last Name : </label>
+						<input name="lastName" type="text" id="lastName" maxlength="15"><br/><br/>
+						<label for="cardNumber">Card Number : </label>
+						<input name="cardNumber" type="text" id="cardNumber" maxlength="16"><br/><br/>
+						<label for="nameOnCard">Name on Card : </label>
+						<input name="nameOnCard" type="text" id="nameOnCard" maxlength="30"><br/><br/>
+						<label for="expiryMonth">Expiry Month : &nbsp;&nbsp;&nbsp;</label>
+						<select name="expiryMonth" id="expiryMonth">
+							<option value="">Select Month</option>
+							<option value="01">01</option>
+							<option value="02">02</option>
+							<option value="03">03</option>
+							<option value="04">04</option>
+							<option value="05">05</option>
+							<option value="06">06</option>
+							<option value="07">07</option>
+							<option value="08">08</option>
+							<option value="09">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select>
+						<br/><br/>
+						<label for="expiryYear">Expiry Year :&nbsp;&nbsp;&nbsp;&nbsp; </label>
+						<select name="expiryYear" id="expiryYear">
+							<option value="">Select Year</option>
+							<option value="2016">2016</option>
+							<option value="2017">2017</option>
+							<option value="2018">2018</option>
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021">2021</option>
+							<option value="2022">2022</option>
+							<option value="2023">2023</option>
+							<option value="2024">2024</option>
+							<option value="2025">2025</option>
+						</select>
+						<br/><br/>
+						<label for="cvv">CVV : </label>
+						<input name="cvv" type="password" id="cvv" maxlength="4"><br/><br/>
+						<label for="email">Email : </label>
+						<input name="email" type="text" id="email"><br/><br/>
+					</form>
+						<input type="button" value="Go To Review" onclick="goReview()"/>
+				</div>
+					
+					<div class="hide" id="reviewContainer">
+						<h2>Preview Order Information</h2>
+						<p><b>Name :</b> <span id="reviewName"></span></p>
+						<p><b>Card Number :</b> <span id="reviewCardNumber"></span></p>
+						<p><b>Name on Card :</b> <span id="reviewNameOnCard"></span></p>
+						<p><b>Expiry Date :</b> <span id="reviewExpirationDate"></span></p>
+						<p><b>Email :</b> <span id="reviewEmail"></span></p>
+						<input type="button" value="Edit" onclick="editReview()"/>
+						<input type="button" value="Buy" onclick="loadScreen(3)"/>
+					</div>
+			</div>
+			<div class="hide" id="page3">
+			<h2 style="text-align:center">Confirmation</h2>
+				<div class="conform">
+					<p><b>Order Number :</b> XXXXXXXX</p>
+					<div>
+						<div class="pull-left img-container">
+							<img src="images/product1.jpg" alt="guitar" id="confImage">
+						</div>
+						<div class="pull-left product-info-container">
+							<p><b>Price :</b> <span id="Price"></span></p>
+							<p><b>Product description :</b> <span id="Info"></span></p>
+							<p><b>Shipping Details :</b> <span id="Ship"></span></p>
+							<p><b>Final Price :</b> <span id="Total"></span></p>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<input type="button" value="Go To Home Page" id="home" onclick="goToHome()"/>
+			</div>
+		</div>
+		<script>
+			var acc = document.getElementsByClassName("accordion");
+			var i;
+			for (i = 0; i < acc.length; i++) {
+				acc[i].onclick = function(){
+					this.classList.toggle("active");
+					this.nextElementSibling.classList.toggle("show");
+				}
+			}
+		</script>
+</body>
+</html>
